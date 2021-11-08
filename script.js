@@ -10,7 +10,7 @@ const nextBtn = document.getElementById("next");
 const songs = [
     {
         name:"jacinto-1",
-        displayName:"Nobember Rain", 
+        displayName:"jacinto", 
         artist: "Jacinto Design"
     }
 ]
@@ -49,5 +49,18 @@ function  loadSong (song) {
     image.src =  `img/${song.name}.jpg`
 }
 
+// Current Song 
+let songIndex = 0 ;
+
+// Next Song 
+function nextSong () {
+songIndex++;
+loadSong(songs[songIndex]);
+playSong();
+}
 // On Load - Select First Song 
-loadSong( songs [3]);
+loadSong(songs [3]);
+
+// Event Listenrs 
+prevBtn.addEventListener("click", prevSong);
+nextBtn.addEventListener("click", nestSong);
