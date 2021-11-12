@@ -4,6 +4,8 @@ const artist= document.querySelector("artist");
 const music = document.querySelector("audio");
 const progressContainer= document.getElementById("progress-container");
 const progress= document.getElementById("progress");
+const currentTimeEl = document.getElementById("current-time");
+const durationEl = document.getElementById("duration");
 const prevBtn = document.getElementById("prev");
 const playBtn = document.getElementById("play");
 const nextBtn = document.getElementById("next");
@@ -86,9 +88,12 @@ if (isPlaying){
     // Update progress bar width
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%` ;
+    // Calculate display for duration 
+    const durationMinutes = duration / 60 ;
+    
 }
 }
 // Event Listenrs 
-prevBtn.addEventListener("click", prevSong);
-nextBtn.addEventListener("click", nestSong);
+prevBtn.addEventListener("click", preveSong);
+nextBtn.addEventListener("click", nextSong);
 music.addEventListener("timeupdate", updateProgressBar);
