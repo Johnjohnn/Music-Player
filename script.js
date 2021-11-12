@@ -89,8 +89,13 @@ if (isPlaying){
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%` ;
     // Calculate display for duration 
-    const durationMinutes = duration / 60 ;
+    const durationMinutes = Math.floor(duration / 60);
+    let durationSeconds = Math.floor(duration % 60);
     
+    // Delay Switching duration Element to avid NaN 
+    if (durationSeconds) {
+        durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
+    }
 }
 }
 // Event Listenrs 
