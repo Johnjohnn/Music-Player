@@ -101,7 +101,11 @@ if (isPlaying){
 // Set Progress Bar 
 function setProgresBar (e) {
    const width = this.clientWidth;
-   console.log(width)
+   console.log("width", width)
+   const clickX = e.offsetX;
+   const { duration } = music;
+   music.currentTime =  (clickX / width) * duration;
+
 }
 // Event Listenrs 
 prevBtn.addEventListener("click", preveSong);
