@@ -1,7 +1,7 @@
 const image = document.querySelector("img");
 const title = document.querySelector("title");
 const artist= document.querySelector("artist");
-const music = document.querySelector("audio");
+const  music = document.querySelector("audio");
 const progressContainer= document.getElementById("progress-container");
 const progress= document.getElementById("progress");
 const currentTimeEl = document.getElementById("current-time");
@@ -98,7 +98,13 @@ if (isPlaying){
     }
 }
 }
+// Set Progress Bar 
+function setProgresBar (e) {
+   const width = this.clientWidth;
+   console.log(width)
+}
 // Event Listenrs 
 prevBtn.addEventListener("click", preveSong);
 nextBtn.addEventListener("click", nextSong);
 music.addEventListener("timeupdate", updateProgressBar);
+progressContainer.addEventListener("click", setProgressBar)
